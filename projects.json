@@ -1,0 +1,80 @@
+[
+  {
+    "id": "ai-career-intelligence",
+    "title": "AI Career Intelligence Engine",
+    "category": "Machine Learning / API",
+    "description": "Salary and job-chance prediction system trained on candidate profile data. Two Random Forest models power real-time predictions through a FastAPI backend, with feature-importance insights and a Power BI dashboard layer on top.",
+    "stack": ["Python", "Pandas", "Scikit-learn", "FastAPI", "Power BI"],
+    "github": "https://github.com/utkarshadley/Ai-carrer-intelligence-engine",
+    "demo": "",
+    "demoLabel": "Live API (add Render link after deploy)"
+  },
+  {
+    "id": "sales-dashboard",
+    "title": "Sales Analysis Dashboard",
+    "category": "Business Intelligence / Excel",
+    "description": "Interactive Excel dashboard that turns raw sales data into decision-ready insights \u2014 dynamic charts and KPIs surface top products, profit trends, and performance gaps for business teams.",
+    "stack": ["Excel", "Power Query", "DAX", "KPI Design"],
+    "github": "https://github.com/utkarshadley/Sales-Analysing-Dashboard",
+    "demo": "",
+    "demoLabel": "Preview screenshots on GitHub"
+  },
+  {
+    "id": "college-chatbot",
+    "title": "Campus Chatbot",
+    "category": "NLP / Web App",
+    "description": "A student-facing chatbot that answers common college questions on demand \u2014 built as a lightweight web app with a Python backend so students get instant answers instead of digging through notices.",
+    "stack": ["Python", "HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/utkarshadley/Chatbot",
+    "demo": "",
+    "demoLabel": "Live demo (add Vercel link)"
+  },
+  {
+    "id": "data-engineering-pipeline",
+    "title": "From Raw Data to Insight",
+    "category": "Data Engineering",
+    "description": "An end-to-end data engineering workflow \u2014 raw data cleaned and modeled in Python, queried through SQL Server, and surfaced as an interactive Power BI report. Built while following a published data engineering case study.",
+    "stack": ["Python", "SQL Server", "Power BI"],
+    "github": "https://github.com/utkarshadley/From-Raw-Data-to-Insight-A-Complete-Data-Engineering-Project-with-Python-SQL-Server-and-Power-BI",
+    "demo": "",
+    "demoLabel": ""
+  },
+  {
+    "id": "project-drishti",
+    "title": "Project Drishti",
+    "category": "Data Analytics / Public Sector",
+    "description": "Analysis of Aadhaar enrolment, demographic, and biometric data to flag service gaps and overloaded regions. Cleaning, aggregation, and anomaly detection turn raw records into recommendations for mobile vans, new centers, and policy planning.",
+    "stack": ["Python", "Pandas", "Anomaly Detection", "Data Storytelling"],
+    "github": "https://github.com/utkarshadley/Project-Drishti-Predictive-Service-and-Fraud-Radar",
+    "demo": "",
+    "demoLabel": "Read the report (PDF on GitHub)"
+  },
+  {
+    "id": "swiggy-dashboard",
+    "title": "swiggy dashboard",
+    "category": "power-BI",
+    "description": "Professional Power BI-style executive dashboard for restaurant, pricing, rating, and delivery analysis. Built in Excel with dynamic charts, KPIs, and slicers to surface insights for business teams.",
+    "stack": [
+      "PYTHON",
+      "EXCEL"
+    ],
+    "github": "https://github.com/utkarshadley/swiggy-dashboard",
+    "demo": "",
+    "demoLabel": "link on github"
+  },
+  {
+    "id": "swiggy-end-to-end-data-analysis",
+    "title": "swiggy-end-to-end-data-analysis",
+    "category": "analyzing the data",
+    "description": "End-to-end Swiggy restaurant data analysis using SQL, Python (Pandas), and Power BI to uncover business insights, pricing trends, restaurant performance, customer ratings, and delivery analytics.",
+    "stack": [
+      "python",
+      "matpotlib",
+      "sql",
+      "power bi"
+    ],
+    "github": "https://github.com/utkarshadley/swiggy-end-to-end-data-analysis.git",
+    "demo": "",
+    "demoLabel": ""
+  }
+]

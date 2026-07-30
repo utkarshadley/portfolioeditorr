@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin &mdash; Add Project</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .admin-wrap { max-width: 640px; margin: 60px auto; padding: 0 24px; }
+  .field { margin-bottom: 18px; }
+  label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px; font-family: var(--font-mono); }
+  input, textarea {
+    width: 100%; padding: 10px 12px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--bg-card); color: var(--text);
+    font-family: var(--font-body); font-size: 14px;
+  }
+  textarea { resize: vertical; min-height: 70px; }
+  #output {
+    white-space: pre-wrap; background: var(--bg-raised); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px; font-family: var(--font-mono); font-size: 13px;
+    color: var(--accent2); margin-top: 20px; display: none;
+  }
+  .note { color: var(--text-muted); font-size: 13px; margin-top: 24px; line-height: 1.7; }
+  #gate { max-width: 400px; margin: 120px auto; text-align: center; }
+</style>
+</head>
+<body>
+
+<div id="gate" class="wrap">
+  <p class="eyebrow">// restricted</p>
+  <h2 style="font-family: var(--font-display);">Enter admin password</h2>
+  <div class="field">
+    <input type="password" id="pw" placeholder="Password">
+  </div>
+  <button class="btn btn-primary" onclick="checkPw()">Unlock</button>
+  <p class="note">This only guards this local page in your browser &mdash; it does not protect projects.json itself. Anyone with repo write access can already edit that file directly on GitHub.</p>
+</div>
+
+<div id="form" class="admin-wrap" style="display:none;">
+  <p class="eyebrow">// add project</p>
+  <h2 style="font-family: var(--font-display); margin-top: 0;">New project entry</h2>
+
+  <div class="field"><label>Title</label><input id="title" placeholder="e.g. AI Career Intelligence Engine"></div>
+  <div class="field"><label>Category</label><input id="category" placeholder="e.g. Machine Learning / API"></div>
+  <div class="field"><label>Description</label><textarea id="description" placeholder="1-2 sentences: what it does and the problem it solves"></textarea></div>
+  <div class="field"><label>Tech stack (comma-separated)</label><input id="stack" placeholder="Python, FastAPI, Scikit-learn"></div>
+  <div class="field"><label>GitHub link</label><input id="github" placeholder="https://github.com/utkarshadley/..."></div>
+  <div class="field"><label>Live demo link (leave blank if none)</label><input id="demo" placeholder="https://your-app.onrender.com/docs"></div>
+  <div class="field"><label>Demo label if no live link (e.g. "Preview on GitHub")</label><input id="demoLabel" placeholder="Preview screenshots on GitHub"></div>
+
+  <button class="btn btn-primary" onclick="generate()">Generate JSON</button>
+
+  <div id="output"></div>
+  <p class="note">
+    Copy the block above and paste it inside the <code>[ ]</code> array in <strong>projects.json</strong>
+    (add a comma before it if it's not the first entry), then commit and push to GitHub.
+    Your live site updates automatically once GitHub Pages rebuilds &mdash; usually within a minute.
+  </p>
+</div>
+
+<script>
+  // Change this password before you deploy. This is a light local gate, not real security.
+  const ADMIN_PASSWORD = "utkarsh2026";
+
+  function checkPw() {
+    const val = document.getElementById("pw").value;
+    if (val === ADMIN_PASSWORD) {
+      document.getElementById("gate").style.display = "none";
+      document.getElementById("form").style.display = "block";
+    } else {
+      alert("Wrong password.");
+    }
+  }
+
+  function slugify(str) {
+    return str.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  }
+
+  function generate() {
+    const title = document.getElementById("title").value.trim();
+    const category = document.getElementById("category").value.trim();
+    const description = document.getElementById("description").value.trim();
+    const stack = document.getElementById("stack").value.split(",").map(s => s.trim()).filter(Boolean);
+    const github = document.getElementById("github").value.trim();
+    const demo = document.getElementById("demo").value.trim();
+    const demoLabel = document.getElementById("demoLabel").value.trim();
+
+    if (!title || !github) {
+      alert("Title and GitHub link are required.");
+      return;
+    }
+
+    const entry = {
+      id: slugify(title),
+      title,
+      category,
+      description,
+      stack,
+      github,
+      demo,
+      demoLabel
+    };
+
+    const json = JSON.stringify(entry, null, 2)
+      .split("\n")
+      .map((line, i) => (i === 0 ? "  " + line : "  " + line))
+      .join("\n");
+
+    const out = document.getElementById("output");
+    out.style.display = "block";
+    out.textContent = json + ",";
+  }
+</script>
+</body>
+</html>
