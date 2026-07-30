@@ -1,7 +1,8 @@
 // ---------- Terminal typing animation ----------
 const termLines = [
   { prompt: "utkarsh@portfolio", cmd: "whoami" },
-  { out: "Data Analytics Intern @ Unessa Foundation" },
+  { out: "Data Analytics Intern  @ Unessa Foundation" },
+  { out: " Exploring AI & Data Science" },
   { prompt: "utkarsh@portfolio", cmd: "ls projects/" },
   { out: "ai-career-intelligence  sales-dashboard  chatbot" },
   { out: "data-engineering-pipeline  project-drishti" },
