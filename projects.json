@@ -50,19 +50,6 @@
     "demoLabel": "Read the report (PDF on GitHub)"
   },
   {
-    "id": "swiggy-dashboard",
-    "title": "swiggy dashboard",
-    "category": "power-BI",
-    "description": "Professional Power BI-style executive dashboard for restaurant, pricing, rating, and delivery analysis. Built in Excel with dynamic charts, KPIs, and slicers to surface insights for business teams.",
-    "stack": [
-      "PYTHON",
-      "EXCEL"
-    ],
-    "github": "https://github.com/utkarshadley/swiggy-dashboard",
-    "demo": "",
-    "demoLabel": "link on github"
-  },
-  {
     "id": "swiggy-end-to-end-data-analysis",
     "title": "swiggy-end-to-end-data-analysis",
     "category": "analyzing the data",
